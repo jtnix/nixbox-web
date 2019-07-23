@@ -1,0 +1,59 @@
+/* all.sass overrides: */
+code[class*="language-"] {
+  padding: 0;
+}
+
+code span.token.tag {
+  padding: 0;
+  font-size: 1em;
+  height: 1em;
+  background-color: inherit;
+  white-space: pre-line;
+}
+
+code span.token.number {
+  background-color: inherit;
+  border-radius: 0;
+  font-size: 0.95rem;
+  margin: 0;
+  min-width: auto;
+  padding: 0;
+}
+
+code span.token.attr-name {
+  padding-left: 0.5em;
+}
+
+/* .gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+} */
+
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+}

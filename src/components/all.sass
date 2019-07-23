@@ -122,11 +122,9 @@ $menu-label-color: $white-ter
   flex-basis: 35%;
   margin: 0 1.5em 0 0;
 
-
 @import "~bulma"
 
-
-// responsiveness
+responsiveness
 +tablet-only
   .blog-list-item .featured-thumbnail
     flex-basis: 50%;
@@ -138,3 +136,8 @@ $menu-label-color: $white-ter
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
+
+@import "~prismjs/themes/prism-funky.css"
+@import "~prismjs/plugins/line-highlight/prism-line-highlight.css"
+@import "~prismjs/plugins/line-numbers/prism-line-numbers.css"
+@import "prism-fix.css"
