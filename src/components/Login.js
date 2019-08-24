@@ -39,7 +39,7 @@ class Login extends React.Component {
     if (isLoggedIn()) navigate("/user/profile");
     return (
       <div>
-        <h1>Sign In</h1>
+        <h2 className="is-size-3">Sign In</h2>
         {this.state.error && <Error errorMessage={this.state.error} />}
         <div style={styles.formContainer}>
           <input
@@ -61,7 +61,9 @@ class Login extends React.Component {
             <span style={styles.buttonText}>Sign In</span>
           </div>
         </div>
-        <Link to="/user/signup">Sign Up</Link>
+        <div className="has-text-centered">
+          <Link to="/user/signup">Sign Up</Link>
+        </div>
         <br />
       </div>
     );
@@ -72,7 +74,8 @@ const styles = {
   input: {
     height: 40,
     margin: "10px 0px",
-    padding: 7
+    padding: 7,
+    fontSize: "1.5em"
   },
   formContainer: {
     display: "flex",

@@ -16,6 +16,10 @@ $black: #2b2523
 .navbar .navbar-menu
   box-shadow:none !important
 
+.nav-greet 
+  padding-left: 10px
+  text-transform: capitalize
+
 .content .taglist
   list-style: none
   margin-bottom: 0
@@ -106,39 +110,75 @@ $menu-label-color: $white-ter
 .social
   padding: 2em
 .social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
+  padding: .5em .5em .3em .5em
+  border-radius: 1em
+  background-color: $white-ter
+  margin: .5em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
+
+div.userMenu
+  position: relative
+
+div.userMenu a
+  display: flex
+  color: #333
+
+div.userMenu:hover
+  background-color: #f2f2f2
+
+div.userMenu div.userDropdown
+  min-width: 100% // Set width of the dropdown
+  background: rgb(242,242,242);
+  background: linear-gradient(180deg, rgba(242,242,242,1) 0%, rgba(242,242,242,1) 66%, rgba(255,255,255,0) 100%);
+  display: none
+  position: absolute
+  z-index: 999
+  right: 0
+  top: 40px
+  text-align: left
+  padding-left: 10px
+  // border-bottom: 1px solid #eee
+  border-left: 1px solid #eee
+  border-right: 1px solid #eee
+
+div.userMenu:hover div.userDropdown
+  display: block // Display the dropdown 
+  padding: 15px 0 15px
+
+div.userMenu div.userDropdown p
+  display: block
+  padding: 5px 10px
+
+div.userMenu div.userDropdown p:hover
+  background-color: #fefefe
 
 // blog roll
 .blog-list-item.is-featured
-  background-color: #d6400033;
+  background-color: #d6400033
 .blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
+  display: flex
+  margin-bottom: 1em
 .blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
+  flex-basis: 35%
+  margin: 0 1.5em 0 0
 
 @import "~bulma"
 
 responsiveness
 +tablet-only
   .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
+    flex-basis: 50%
 
 +mobile
   .blog-list-item header
     display: block
   .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+    text-align: center
+    max-width: 70%
+    margin: 0 0 1em
 
 @import "~prismjs/themes/prism-funky.css"
 @import "~prismjs/plugins/line-highlight/prism-line-highlight.css"

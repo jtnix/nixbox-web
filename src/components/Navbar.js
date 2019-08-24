@@ -3,9 +3,10 @@ import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
 import md5 from "md5";
+import { navigate } from "@reach/router";
 import Gravatar from "react-gravatar";
-import { getCurrentUser } from "../utils/auth";
-import Amplify from "aws-amplify";
+import { getCurrentUser, setUser } from "../utils/auth";
+import Amplify, { Auth } from "aws-amplify";
 import config from "../aws-exports";
 Amplify.configure(config);
 
@@ -15,13 +16,21 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: "",
-      user: {}
+      user: null
     };
   }
 
   componentDidMount = () => {
     const user = getCurrentUser();
     this.setState({ user });
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    const user = getCurrentUser();
+    if (this.state.user.email !== user.email) {
+      // console.log(this.state, user);
+      this.setState({ user });
+    }
   };
 
   toggleHamburger = () => {
@@ -42,6 +51,13 @@ const Navbar = class extends React.Component {
             });
       }
     );
+  };
+
+  logout = () => {
+    Auth.signOut();
+    this.setState({ user: {} });
+    setUser({});
+    navigate("/");
   };
 
   render() {
@@ -90,14 +106,28 @@ const Navbar = class extends React.Component {
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
-              {!!user.username && (
-                <span className="navbar-item">
-                  <span className="icon">
-                    <Gravatar className="circle" md5={md5(user.email)} />
-                  </span>
-                  <span className="nav-greet">Hi, {user.username}</span>
-                </span>
-              )}
+              <div className="userMenu navbar-item">
+                {user && user.email ? (
+                  <>
+                    <a>
+                      <span className="icon">
+                        <Gravatar className="circle" md5={md5(user.email)} />
+                      </span>
+                      <span className="nav-greet">Hi, {user.username}</span>
+                    </a>
+                    <div className="userDropdown">
+                      <p>
+                        <Link to="/user/profile">Profile</Link>
+                      </p>
+                      <p>
+                        <a onClick={this.logout}>Log out</a>
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <Link to="/user/login">Sign In</Link>
+                )}
+              </div>
               <a
                 className="navbar-item"
                 href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"

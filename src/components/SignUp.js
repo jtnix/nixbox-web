@@ -53,7 +53,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h2 className="is-size-3">Sign Up</h2>
         {this.state.stage === 0 && (
           <div style={styles.formContainer}>
             {this.state.error && <Error errorMessage={this.state.error} />}
@@ -106,7 +106,10 @@ class SignUp extends React.Component {
             </div>
           </div>
         )}
-        <Link to="/user/login">Sign In</Link>
+        <div className="has-text-centered">
+          <Link to="/user/login">Sign In</Link>
+        </div>
+        <br />
       </div>
     );
   }
@@ -116,7 +119,8 @@ const styles = {
   input: {
     height: 40,
     margin: "10px 0px",
-    padding: 7
+    padding: 7,
+    fontSize: "1.5em"
   },
   formContainer: {
     display: "flex",

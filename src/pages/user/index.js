@@ -12,7 +12,7 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <div className="container">
-          <h1 className="title is-size-2 has-text-weight-bold">Users</h1>
+          <h1 className="title is-size-2">Users</h1>
           <Router>
             <PrivateRoute path="/user/home" component={Home} />
             <PrivateRoute path="/user/profile" component={Details} />
