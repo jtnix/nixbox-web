@@ -1,0 +1,39 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "nixbox-cms-prod-20190818183034-authRole",
+            "UnauthRoleArn": "arn:aws:iam::954867027399:role/nixbox-cms-prod-20190818183034-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::954867027399:role/nixbox-cms-prod-20190818183034-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "nixbox-cms-prod-20190818183034-deployment",
+            "UnauthRoleName": "nixbox-cms-prod-20190818183034-unauthRole",
+            "StackName": "nixbox-cms-prod-20190818183034",
+            "StackId": "arn:aws:cloudformation:us-east-1:954867027399:stack/nixbox-cms-prod-20190818183034/cbe2f880-c207-11e9-b02c-0e85eb8bafe8"
+        },
+        "categories": {
+            "auth": {
+                "cognitoNixBlog": {}
+            }
+        }
+    },
+    "auth": {
+        "cognitoNixBlog": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "AppClientSecret": "1s7b0uu754uqnkdi61cde8r00ktv8qrari8q37a1gvkku9kst61c",
+                "UserPoolId": "us-east-1_XwgEJLPR6",
+                "AppClientIDWeb": "12m3vakc6qb3r5todfrmfff48q",
+                "AppClientID": "7uv6ui6m8s5c294r0dd5sv9cgd",
+                "IdentityPoolId": "us-east-1:9dde858c-e58c-4659-bd4e-16e8c47c961a",
+                "IdentityPoolName": "cognitoNixBlog_identitypool__prod",
+                "UserPoolName": "cognitoNixBlog_userpool"
+            },
+            "lastPushTimeStamp": "2019-08-24T21:51:23.089Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/nixbox-cms-prod-20190818183034-deployment/amplify-cfn-templates/auth/cognito704b3e59-cloudformation-template.yml",
+                "logicalId": "authcognitoNixBlog"
+            }
+        }
+    }
+}
