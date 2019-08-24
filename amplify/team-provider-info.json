@@ -1,0 +1,19 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "nixbox-cms-prod-20190818183034-authRole",
+      "UnauthRoleArn": "arn:aws:iam::954867027399:role/nixbox-cms-prod-20190818183034-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::954867027399:role/nixbox-cms-prod-20190818183034-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "nixbox-cms-prod-20190818183034-deployment",
+      "UnauthRoleName": "nixbox-cms-prod-20190818183034-unauthRole",
+      "StackName": "nixbox-cms-prod-20190818183034",
+      "StackId": "arn:aws:cloudformation:us-east-1:954867027399:stack/nixbox-cms-prod-20190818183034/cbe2f880-c207-11e9-b02c-0e85eb8bafe8"
+    },
+    "categories": {
+      "auth": {
+        "cognitoNixBlog": {}
+      }
+    }
+  }
+}

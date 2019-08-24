@@ -23,13 +23,13 @@ I've been helping a few friends out with their web properties for about as long 
 
 ## How Far We've Come
 
-Times have changed. Numerous competitors in the Web Hosting space exist, some with better pricing, features, and stability than legacy providers who're still going strong; the web isn't shrinking. Godaddy has since stratified their userbase and pricing, especially with long term customers but has made little progress with their entry-level, legacy VPS hosting service quality. One of my friends and former clients has reached this stage where renewals at Godaddy aren't making sense.
+Times have changed. Numerous competitors in the Web Hosting space exist, some with better pricing, features, and stability than legacy providers who're still going strong; the web isn't shrinking. Godaddy has since stratified their userbase and pricing, especially with long-term customers, but has made little progress with their entry-level VPS hosting service quality. One of my clients has reached this stage where renewals at Godaddy aren't making sense.
 
 In discussing the options an idea came to me: there's gotta be a way to get a low-traffic WordPress site running on a 1GB VPS at Amazon. Even with MySQL. Why not? Not including the price of domain renewals it's currently $7.62 monthly for a T3.micro container with a lowest price of $2.87 a month if you purchase the container for 3 years in advance. Check out the options using the [Amazon Simple Services Calculator](https://calculator.s3.amazonaws.com/index.html).
 
 But can a 1GB VPC really serve an entire Wordpress installation? MySQL uses a buttload of system resources. So can Apache if the configuration isn't substantially customized. And then there's PHP. All with 1GB running on AMI Linux. What the hell, let's give it a go.
 
-## The Packages
+## Demo Code For Another Project
 
 ```jsx
 class VideoAnnotater extends Component {
@@ -54,6 +54,8 @@ class VideoAnnotater extends Component {
 }
 ```
 
+## CSS Code Sample
+
 ```css{numberLines:42}
 /* all.sass overrides: */
 code[class*="language-"] {
@@ -72,20 +74,3 @@ code span.token.attr-name {
   padding-left: 0.5em;
 }
 ```
-
-## What the updates mean to you
-
-The Specialty Coffee Association of America (SCAA), founded in 1982, is a non-profit trade organization for the specialty coffee industry. With members located in more than 40 countries, SCAA represents every segment of the specialty coffee industry, including:
-
-- producers
-- roasters
-- importers/exporters
-- retailers
-- manufacturers
-- baristas
-
-For over 30 years, SCAA has been dedicated to creating a vibrant specialty coffee community by recognizing, developing and promoting specialty coffee. SCAA sets and maintains quality standards for the industry, conducts market research, and provides education, training, resources, and business services for its members.
-
-Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone or by professionals known as "Q Graders". A standard coffee cupping procedure involves deeply sniffing the coffee, then loudly slurping the coffee so it spreads to the back of the tongue.
-
-The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouthfeel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavour (the characters in the cup), and aftertaste. Since coffee beans embody telltale flavours from the region where they were grown, cuppers may attempt to identify the coffee's origin.

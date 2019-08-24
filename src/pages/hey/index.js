@@ -1,12 +1,14 @@
 import React from "react";
-import { navigate } from "gatsby-link";
+// import { navigate } from "gatsby-link";
+import md5 from "md5";
+import Gravatar from "react-gravatar";
 import Layout from "../../components/Layout";
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
+// function encode(data) {
+//   return Object.keys(data)
+//     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+//     .join("&");
+// }
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -20,7 +22,7 @@ export default class Index extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const form = e.target;
+    // const form = e.target;
     fetch("/.netlify/functions/hello")
       .then(response => response.json())
       .then(json => this.setState({ message: json.msg }));
@@ -33,6 +35,7 @@ export default class Index extends React.Component {
           <div className="container">
             <div className="content">
               <h1>Contact</h1>
+              <Gravatar md5={md5("jolyon@nixbox.com")} />
               <form
                 name="contact"
                 method="post"
