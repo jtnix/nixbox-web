@@ -1,0 +1,8 @@
+{
+  "auth": {
+    "cognitoNixBlog": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
