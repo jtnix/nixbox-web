@@ -56,10 +56,10 @@
     "clean": "gatsby clean",
     "start:app": "npm run develop",
     "start:lambda": "netlify-lambda serve src/lambda",
-    "start": "run-p start:**",
+    "start": "npx run-p start:**",
     "build:app": "npm run clean && gatsby build",
     "build:lambda": "netlify-lambda build src/lambda",
-    "build": "run-p build:**",
+    "build": "npx run-p build:**",
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
@@ -69,6 +69,7 @@
     "http-proxy-middleware": "^0.19.1",
     "netlify-lambda": "^1.6.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.15.3"
+    "prettier": "^1.15.3",
+    "run-p": "^0.0.0"
   }
 }
