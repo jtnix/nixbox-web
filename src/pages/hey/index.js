@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 // import { navigate } from "gatsby-link";
-import md5 from "md5";
-import Gravatar from "react-gravatar";
-import Layout from "../../components/Layout";
+import md5 from 'md5';
+import Gravatar from 'react-gravatar';
+import Layout from '../../components/Layout';
 
 // function encode(data) {
 //   return Object.keys(data)
@@ -23,7 +23,7 @@ export default class Index extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     // const form = e.target;
-    fetch("/.netlify/functions/hello")
+    fetch('/.netlify/functions/hello')
       .then(response => response.json())
       .then(json => this.setState({ message: json.msg }));
   };
@@ -35,7 +35,7 @@ export default class Index extends React.Component {
           <div className="container">
             <div className="content">
               <h1>Contact</h1>
-              <Gravatar md5={md5("jolyon@nixbox.com")} />
+              <Gravatar md5={md5('jolyon@nixbox.com')} />
               <form
                 name="contact"
                 method="post"
@@ -48,12 +48,12 @@ export default class Index extends React.Component {
                 <input type="hidden" name="form-name" value="contact" />
                 <div hidden>
                   <label>
-                    Don’t fill this out:{" "}
+                    Don’t fill this out:{' '}
                     <input name="bot-field" onChange={this.handleChange} />
                   </label>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={"message"}>
+                  <label className="label" htmlFor={'message'}>
                     Message
                   </label>
                   <div className="control">{this.state.message}</div>

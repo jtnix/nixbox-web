@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "gatsby";
-import { getCurrentUser } from "../utils/auth";
+import React from 'react';
+import { Link } from 'gatsby';
+import { getCurrentUser } from '../utils/auth';
 
 const Home = () => {
   const user = getCurrentUser();
-  console.log("user:", user);
+  // console.log('user:', user);
   return (
     <div className="container">
       <h2 className="title is-size-4 has-text-weight-bold">Profile Details</h2>

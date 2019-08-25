@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
-import { navigate } from "@reach/router";
-import { setUser, isLoggedIn } from "../utils/auth";
-import Error from "./Error";
-import { Auth } from "aws-amplify";
+import React from 'react';
+import { Link } from 'gatsby';
+import { navigate } from '@reach/router';
+import { setUser, isLoggedIn } from '../utils/auth';
+import Error from './Error';
+import { Auth } from 'aws-amplify';
 
 class Login extends React.Component {
   state = {
@@ -28,15 +28,15 @@ class Login extends React.Component {
         username: user.username
       };
       setUser(userInfo);
-      navigate("/user/home");
+      navigate('/user/home');
     } catch (err) {
       this.setState({ error: err });
-      console.log("error...: ", err);
+      console.log('error...: ', err);
     }
   };
 
   render() {
-    if (isLoggedIn()) navigate("/user/profile");
+    if (isLoggedIn()) navigate('/user/profile');
     return (
       <div>
         <h2 className="is-size-3">Sign In</h2>
@@ -73,23 +73,23 @@ class Login extends React.Component {
 const styles = {
   input: {
     height: 40,
-    margin: "10px 0px",
+    margin: '10px 0px',
     padding: 7,
-    fontSize: "1.5em"
+    fontSize: '1.5em'
   },
   formContainer: {
-    display: "flex",
-    flexDirection: "column"
+    display: 'flex',
+    flexDirection: 'column'
   },
   button: {
-    backgroundColor: "rebeccapurple",
-    padding: "15px 7px",
-    cursor: "pointer",
-    textAlign: "center",
+    backgroundColor: 'rebeccapurple',
+    padding: '15px 7px',
+    cursor: 'pointer',
+    textAlign: 'center',
     marginBottom: 10
   },
   buttonText: {
-    color: "white"
+    color: 'white'
   }
 };
 
