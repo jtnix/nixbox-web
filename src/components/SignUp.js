@@ -1,17 +1,17 @@
-import React from "react";
-import { navigate } from "@reach/router";
-import { Link } from "gatsby";
-import Error from "./Error";
-import { Auth } from "aws-amplify";
+import React from 'react';
+import { navigate } from '@reach/router';
+import { Link } from 'gatsby';
+import Error from './Error';
+import { Auth } from 'aws-amplify';
 
 const initialState = {
   username: ``,
   password: ``,
-  email: "",
-  phone_number: "",
-  authCode: "",
+  email: '',
+  phone_number: '',
+  authCode: '',
   stage: 0,
-  error: ""
+  error: ''
 };
 
 class SignUp extends React.Component {
@@ -34,7 +34,7 @@ class SignUp extends React.Component {
       this.setState({ stage: 1 });
     } catch (err) {
       this.setState({ error: err });
-      console.log("error signing up...", err);
+      console.log('error signing up...', err);
     }
   };
 
@@ -42,11 +42,11 @@ class SignUp extends React.Component {
     const { username, authCode } = this.state;
     try {
       await Auth.confirmSignUp(username, authCode);
-      alert("Successfully signed up!");
-      navigate("/user/login");
+      alert('Successfully signed up!');
+      navigate('/user/login');
     } catch (err) {
       this.setState({ error: err });
-      console.log("error confirming signing up...", err);
+      console.log('error confirming signing up...', err);
     }
   };
 
@@ -118,23 +118,23 @@ class SignUp extends React.Component {
 const styles = {
   input: {
     height: 40,
-    margin: "10px 0px",
+    margin: '10px 0px',
     padding: 7,
-    fontSize: "1.5em"
+    fontSize: '1.5em'
   },
   formContainer: {
-    display: "flex",
-    flexDirection: "column"
+    display: 'flex',
+    flexDirection: 'column'
   },
   button: {
-    backgroundColor: "rebeccapurple",
-    padding: "15px 7px",
-    cursor: "pointer",
-    textAlign: "center",
+    backgroundColor: 'rebeccapurple',
+    padding: '15px 7px',
+    cursor: 'pointer',
+    textAlign: 'center',
     marginBottom: 10
   },
   buttonText: {
-    color: "white"
+    color: 'white'
   }
 };
 
