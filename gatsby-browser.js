@@ -6,8 +6,8 @@
 
 // You can delete this file if you're not using it
 
-import Auth from "@aws-amplify/auth";
-import { setUser } from "./src/utils/auth";
+const { default: Auth } = require('@aws-amplify/auth');
+const { setUser } = require('./src/utils/auth');
 
 export const onRouteUpdate = (state, page, pages) => {
   Auth.currentAuthenticatedUser()
@@ -19,6 +19,6 @@ export const onRouteUpdate = (state, page, pages) => {
       setUser(userInfo);
     })
     .catch(err => {
-      window.localStorage.setItem("gatsbyUser", null);
+      window.localStorage.setItem('gatsbyUser', null);
     });
 };
