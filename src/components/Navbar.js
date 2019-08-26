@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
+// import logo from '../img/logo.svg';
 import md5 from 'md5';
 import { navigate } from '@reach/router';
 import Gravatar from 'react-gravatar';
@@ -53,6 +53,26 @@ const Navbar = class extends React.Component {
     );
   };
 
+  randomFont = () => {
+    const fonts = [
+      'Audiowide',
+      'Baloo Chettan',
+      'Concert One',
+      'Fredoka One',
+      'Fugaz One',
+      'Megrim',
+      'Monoton',
+      'Nova Round',
+      'Racing Sans One',
+      'Righteous',
+      'Sniglet',
+      'Squada One',
+      'Unica One'
+    ];
+    const randFont = Math.floor(Math.random() * Math.floor(fonts.length));
+    return fonts[randFont];
+  };
+
   logout = () => {
     Auth.signOut();
     this.setState({ user: {} });
@@ -70,8 +90,14 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+            <Link to="/" className="navbar-item is-size-5" title="Nixbox Main">
+              <span
+                className="nixbox-title"
+                style={{ fontFamily: this.randomFont() }}
+              >
+                nixbox
+              </span>
+              {/* <img src={logo} alt="Kaldi" style={{ width: '88px' }} /> */}
             </Link>
             {/* Hamburger menu */}
             <div
@@ -109,18 +135,20 @@ const Navbar = class extends React.Component {
               <div className="userMenu navbar-item">
                 {user && user.email ? (
                   <>
-                    <a>
+                    <div className="flexMiddle">
                       <span className="icon">
                         <Gravatar className="circle" md5={md5(user.email)} />
                       </span>
                       <span className="nav-greet">Hi, {user.username}</span>
-                    </a>
+                    </div>
                     <div className="userDropdown">
                       <p>
                         <Link to="/user/profile">Profile</Link>
                       </p>
                       <p>
-                        <a onClick={this.logout}>Log out</a>
+                        <span onClick={this.logout} className="spanLink">
+                          Log out
+                        </span>
                       </p>
                     </div>
                   </>
