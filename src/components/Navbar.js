@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
-import md5 from 'md5';
-import { navigate } from '@reach/router';
-import Gravatar from 'react-gravatar';
-import { getCurrentUser, setUser } from '../utils/auth';
-import Amplify, { Auth } from 'aws-amplify';
-import config from '../aws-exports';
+import React from "react";
+import { Link } from "gatsby";
+import github from "../img/github-icon.svg";
+import logo from "../img/logo.svg";
+import md5 from "md5";
+import { navigate } from "@reach/router";
+import Gravatar from "react-gravatar";
+import { getCurrentUser, setUser } from "../utils/auth";
+import Amplify, { Auth } from "aws-amplify";
+import config from "../aws-exports";
 Amplify.configure(config);
 
 const Navbar = class extends React.Component {
@@ -15,8 +15,8 @@ const Navbar = class extends React.Component {
     super(props);
     this.state = {
       active: false,
-      navBarActiveClass: '',
-      user: null
+      navBarActiveClass: "",
+      user: null,
     };
   }
 
@@ -37,17 +37,17 @@ const Navbar = class extends React.Component {
     // toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active
+        active: !this.state.active,
       },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active'
+              navBarActiveClass: "is-active",
             })
           : this.setState({
-              navBarActiveClass: ''
+              navBarActiveClass: "",
             });
       }
     );
@@ -57,7 +57,7 @@ const Navbar = class extends React.Component {
     Auth.signOut();
     this.setState({ user: {} });
     setUser({});
-    navigate('/');
+    navigate("/");
   };
 
   render() {
@@ -71,13 +71,16 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
             </Link>
             {/* Hamburger menu */}
+            {/* eslint-disable-next-line */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
+              onKeypress={() => this.toggleHamburger()}
+              ro
             >
               <span />
               <span />
