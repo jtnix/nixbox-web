@@ -71,7 +71,7 @@
 		"authcognitoNixBlog": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/nixbox-cms-prod-20190818183034-deployment/amplify-cfn-templates/auth/cognito704b3e59-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-nixbox-cms-prod-13711-deployment/amplify-cfn-templates/auth/cognito704b3e59-cloudformation-template.yml",
 				"Parameters": {
 					"identityPoolName": "cognitoNixBlog_identitypool",
 					"allowUnauthenticatedIdentities": false,
@@ -133,6 +133,16 @@
 				}
 			}
 		},
+		"hostingS3AndCloudFront": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-nixbox-cms-prod-13711-deployment/amplify-cfn-templates/hosting/template.json",
+				"Parameters": {
+					"bucketName": "nixbox-cms-20200607022404-hostingbucket",
+					"env": "prod"
+				}
+			}
+		},
 		"UpdateRolesWithIDPFunction": {
 			"DependsOn": [
 				"AuthRole",
@@ -167,9 +177,8 @@
 								"        promises.push(iam.updateAssumeRolePolicy(unauthParams).promise());",
 								"        Promise.all(promises)",
 								"         .then((res) => {",
-								"            console.log(\"delete\" + res);",
-								"            console.log(\"response data\" + JSON.stringify(res));",
-								"            response.send(event, context, response.SUCCESS, res);",
+								"            console.log(\"delete response data\" + JSON.stringify(res));",
+								"            response.send(event, context, response.SUCCESS, {});",
 								"         });",
 								"    }",
 								"    if (event.RequestType == 'Update' || event.RequestType == 'Create') {",
@@ -197,7 +206,7 @@
 					}
 				},
 				"Handler": "index.handler",
-				"Runtime": "nodejs8.10",
+				"Runtime": "nodejs10.x",
 				"Timeout": "300",
 				"Role": {
 					"Fn::GetAtt": [
