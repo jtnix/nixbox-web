@@ -59,7 +59,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: "gatsby-remark-prismjs",
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
               // defaults to 'language-' (eg <pre class="language-js">).
@@ -117,10 +117,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: "gatsby-plugin-styled-components",
+      options: {
+        // Add any options here
+      },
+    },
+    {
+      resolve: "gatsby-plugin-gtag",
       options: {
         // your google analytics tracking id
-        trackingId: `UA-711155-11`,
+        trackingId: "UA-711155-11",
         // Puts tracking script in the head instead of the body
         head: false,
         // enable ip anonymization

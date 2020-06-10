@@ -17,10 +17,10 @@
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-nixbox-cms-prod-13711-deployment/amplify-cfn-templates/auth/cognito704b3e59-cloudformation-template.yml",
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-nixbox-cms-prod-13711-deployment/amplify-cfn-templates/auth/cognitoNixBlog-cloudformation-template.yml",
 				"logicalId": "authcognitoNixBlog"
 			},
-			"lastPushTimeStamp": "2020-06-07T06:27:05.976Z",
+			"lastPushTimeStamp": "2020-06-08T02:30:32.978Z",
 			"output": {
 				"AppClientSecret": "74q0hdfneuc1in87ako8m3rh9p63e6tbql2ioi8e7adi7021g5f",
 				"UserPoolId": "us-east-1_ppkCpXhYW",
@@ -30,25 +30,24 @@
 				"IdentityPoolName": "cognitoNixBlog_identitypool__prod",
 				"UserPoolName": "cognitoNixBlog_userpool"
 			},
-			"lastPushDirHash": "gvQl/YrP8mfOi/HxkzU0TNV4sg8="
+			"lastPushDirHash": "tX0cULRG5N8OoZzfBvZanEFwp9U="
 		}
 	},
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
+	"hosting": {},
+	"storage": {
+		"uploads": {
+			"service": "S3",
 			"providerPlugin": "awscloudformation",
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-nixbox-cms-prod-13711-deployment/amplify-cfn-templates/hosting/template.json",
-				"logicalId": "hostingS3AndCloudFront"
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-nixbox-cms-prod-13711-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storageuploads"
 			},
-			"lastPushTimeStamp": "2020-06-07T06:27:05.976Z",
+			"lastPushTimeStamp": "2020-06-08T02:30:32.978Z",
 			"output": {
-				"S3BucketSecureURL": "https://nixbox-cms-20200607022404-hostingbucket-prod.s3.amazonaws.com",
-				"WebsiteURL": "http://nixbox-cms-20200607022404-hostingbucket-prod.s3-website-us-east-1.amazonaws.com",
-				"Region": "us-east-1",
-				"HostingBucketName": "nixbox-cms-20200607022404-hostingbucket-prod"
+				"BucketName": "nixboxbloguploadsprod-prod",
+				"Region": "us-east-1"
 			},
-			"lastPushDirHash": "DH9WkGDLHObm2hpoJ/jwKjopp0c="
+			"lastPushDirHash": "/NgP4zaOxHCcB7Wiso/BOQGjprk="
 		}
 	}
 }

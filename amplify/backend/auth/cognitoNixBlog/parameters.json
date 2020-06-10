@@ -1,57 +1,55 @@
 {
-  "identityPoolName": "cognitoNixBlog_identitypool",
-  "allowUnauthenticatedIdentities": false,
-  "thirdPartyAuth": false,
-  "lambdaLogPolicy": "cognitoNixBlog_lambda_log_policy",
-  "openIdLambdaRoleName": "cognitoNixBlog_openid_lambda_role",
-  "openIdRolePolicy": "cognitoNixBlog_openid_pass_role_policy",
-  "openIdLambdaIAMPolicy": "cognitoNixBlog_openid_lambda_iam_policy",
-  "openIdLogPolicy": "cognitoNixBlog_openid_lambda_log_policy",
-  "userPoolName": "cognitoNixBlog_userpool",
-  "autoVerifiedAttributes": ["email"],
-  "mfaConfiguration": "OFF",
-  "mfaTypes": ["SMS Text Message"],
-  "roleName": "cognitoNixBlog_sns-role",
-  "roleExternalId": "cognitoNixBlog_role_external_id",
-  "policyName": "cognitoNixBlog-sns-policy",
-  "smsAuthenticationMessage": "Your authentication code is {####}",
-  "smsVerificationMessage": "Your verification code is {####}",
-  "emailVerificationSubject": "Your verification code",
-  "emailVerificationMessage": "Your verification code is {####}",
-  "defaultPasswordPolicy": false,
-  "passwordPolicyMinLength": 8,
-  "passwordPolicyCharacters": [
-    "Requires Lowercase",
-    "Requires Uppercase",
-    "Requires Numbers",
-    "Requires Symbols"
-  ],
-  "requiredAttributes": ["email"],
-  "userpoolClientName": "cognitoNixBlog_app_client",
-  "userpoolClientGenerateSecret": true,
-  "userpoolClientRefreshTokenValidity": 30,
-  "userpoolClientReadAttributes": ["email"],
-  "mfaLambdaRole": "cognitoNixBlog_totp_lambda_role",
-  "mfaLambdaLogPolicy": "cognitoNixBlog_totp_lambda_log_policy",
-  "mfaPassRolePolicy": "cognitoNixBlog_totp_pass_role_policy",
-  "mfaLambdaIAMPolicy": "cognitoNixBlog_totp_lambda_iam_policy",
-  "userpoolClientLambdaRole": "cognitoNixBlog_userpoolclient_lambda_role",
-  "userpoolClientLogPolicy": "cognitoNixBlog_userpoolclient_lambda_log_policy",
-  "userpoolClientLambdaPolicy": "cognitoNixBlog_userpoolclient_lambda_iam_policy",
-  "userpoolClientSetAttributes": false,
-  "useDefault": "default",
-  "resourceName": "cognitoNixBlog",
-  "authSelections": "identityPoolAndUserPool",
-  "authRoleName": {
-    "Ref": "AuthRoleName"
-  },
-  "unauthRoleName": {
-    "Ref": "UnauthRoleName"
-  },
-  "authRoleArn": {
-    "Fn::GetAtt": ["AuthRole", "Arn"]
-  },
-  "unauthRoleArn": {
-    "Fn::GetAtt": ["UnauthRole", "Arn"]
-  }
+    "identityPoolName": "cognitoNixBlog_identitypool",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "cognit4247bf97",
+    "userPoolName": "cognitoNixBlog_userpool",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [
+        "Requires Lowercase",
+        "Requires Uppercase",
+        "Requires Numbers",
+        "Requires Symbols"
+    ],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "cognitoNixBlog_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "thirdPartyAuth": false,
+    "roleExternalId": "cognitoNixBlog_role_external_id",
+    "useDefault": "default",
+    "resourceName": "cognitoNixBlog",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    }
 }

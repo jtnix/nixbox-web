@@ -22,3 +22,5 @@ export const onRouteUpdate = (state, page, pages) => {
       window.localStorage.setItem('gatsbyUser', null);
     });
 };
+
+export const shouldUpdateScroll = () => false;
